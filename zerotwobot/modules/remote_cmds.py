@@ -1,4 +1,4 @@
-from zerotwobot import application, LOGGER
+from zerotwobot import application, LOGGER, DRAGONS
 from zerotwobot.modules.helper_funcs.chat_status import (
     bot_admin,
     is_bot_admin,
@@ -542,11 +542,11 @@ async def runmute(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await message.reply_text("Well damn, I can't unmute that user.")
 
 
-RBAN_HANDLER = CommandHandler("rban", rban, filters=filters.User(SUDO_USERS), block=False)
-RUNBAN_HANDLER = CommandHandler("runban", runban, filters=filters.User(SUDO_USERS), block=False)
-RKICK_HANDLER = CommandHandler("rkick", rkick, filters=filters.User(SUDO_USERS), block=False)
-RMUTE_HANDLER = CommandHandler("rmute", rmute, filters=filters.User(SUDO_USERS), block=False)
-RUNMUTE_HANDLER = CommandHandler("runmute", runmute, filters=filters.User(SUDO_USERS), block=False)
+RBAN_HANDLER = CommandHandler("rban", rban, filters=filters.User(DRAGONS), block=False)
+RUNBAN_HANDLER = CommandHandler("runban", runban, filters=filters.User(DRAGONS), block=False)
+RKICK_HANDLER = CommandHandler("rkick", rkick, filters=filters.User(DRAGONS), block=False)
+RMUTE_HANDLER = CommandHandler("rmute", rmute, filters=filters.User(DRAGONS), block=False)
+RUNMUTE_HANDLER = CommandHandler("runmute", runmute, filters=filters.User(DRAGONS), block=False)
 
 application.add_handler(RBAN_HANDLER)
 application.add_handler(RUNBAN_HANDLER)
